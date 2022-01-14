@@ -5,7 +5,7 @@ body {
 }
 
 #salam {
-    font-size: 250%;
+    font-size: 3vw;
 }
 
 .sec1 {
@@ -26,16 +26,27 @@ body {
     padding-bottom: 5vw;
 }
 
+.set2 {
+    float: left;
+    width: 50%;
+}
+
+.unset2::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .sec2 p {
     margin-top: 5vw;
     color: #21B573;
-    font-size: 200%;
-    line-height: 123%;
+    font-size: 1.9vw;
+    line-height: 3vw;
 }
 
 .sec2 h1 {
     font-weight: 700;
-    font-size: 400%;
+    font-size: 4vw;
 }
 
 #itm3 {
@@ -43,7 +54,6 @@ body {
     text-decoration: none;
     font-weight: 600;
     color: rgb(179, 178, 178);
-    font-size: 90%;
 }
 
 #itm {
