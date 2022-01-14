@@ -4,8 +4,12 @@ body {
     color: #F8FFFB;
 }
 
+#salam {
+    font-size: 3vw;
+}
+
 .sec1 {
-    padding-top: 10px;
+    padding-top: .5vw;
 }
 
 .element {
@@ -18,24 +22,35 @@ body {
 }
 
 .sec2 {
-    margin-top: 60px;
-    padding-bottom: 50px;
+    margin-top: 6vw;
+    padding-bottom: 5vw;
+}
+
+.set2 {
+    float: left;
+    width: 50%;
+}
+
+.unset2::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .sec2 p {
-    margin-top: 45px;
+    margin-top: 5vw;
     color: #21B573;
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 1.9vw;
+    line-height: 3vw;
 }
 
 .sec2 h1 {
     font-weight: 700;
-    font-size: 60px;
+    font-size: 4vw;
 }
 
 #itm3 {
-    margin-top: 80px;
+    margin-top: 7vw;
     text-decoration: none;
     font-weight: 600;
     color: rgb(179, 178, 178);
@@ -50,20 +65,20 @@ body {
 }
 
 .sec3 {
-    margin-top: 50px;
-    margin-bottom: 7%;
+    margin-top: 1vw;
+    margin-bottom: 5vw;
 }
 
 .sec3 h1 {
-    margin-bottom: 60px;
+    margin-bottom: 6vw;
 }
 
 .sec3 .card {
     background-color: #F8FFFB;
     border: none;
-    border-radius: 10px;
-    padding-bottom: 20%;
-    padding-top: 20%;
+    border-radius: 1vw;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
     width: 100%;
     height: 100%;
 }
@@ -71,7 +86,7 @@ body {
 #itm2 {
     text-decoration: none;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 100%;
 }
 
 .sec3 .card p {
@@ -86,49 +101,55 @@ body {
     color: black;
 }
 
-.sec3 .card h1 {
-    margin-bottom: 20%;
-}
-
 .sec3 .card:hover {
     background-color: white;
     box-shadow: 2px 9px 20px lightgrey;
 }
 
 .sec4 {
-    padding-top: 5%;
-    margin-bottom: 6%;
+    padding-top: 5vw;
+    margin-bottom: 5vw;
 }
 
 .sec4 .card {
-    padding-top: 5%;
+    padding-top: 1vw;
     border-radius: 4%;
     border: none;
     box-shadow: 2px 9px 20px lightgrey;
-}
-
-.sec4 p {
-    font-size: 125%;
+    width: 100%;
+    height: 100%;
 }
 
 .sec4 h3 {
-    font-size: 200%;
+    font-size: 2vw;
     color: black;
 }
 
-.card-footer {
-    background-color: white;
-    border: none;
-    margin-top: 10%;
-}
-
 .sec5 {
-    margin-top: 5%;
-    margin-bottom: 8%;
+    margin-top: 5vw;
+    margin-bottom: 4vw;
+    height: 100%;
+    width: 100%;
 }
 
 .sec6 p {
     color: white;
+}
+
+.set {
+    float: left;
+    width: 50%;
+}
+
+.unset::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.set6 {
+    float: left;
+    width: 16%;
 }
 
 .kalar2 {
