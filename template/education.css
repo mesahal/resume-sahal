@@ -23,7 +23,7 @@ body {
 
 .set {
     float: left;
-    width: 35%;
+    width: 40%;
 }
 
 .pro {
@@ -42,6 +42,11 @@ body {
 h4,
 h5 {
     font-size: 1vw;
+}
+
+.sec2 {
+    margin-top: 5vw;
+    margin-bottom: 15vw;
 }
 
 .sec6 p {
