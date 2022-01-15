@@ -1,0 +1,52 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #282531;
+    color: #F8FFFB;
+}
+
+.sec1 {
+    padding-top: .5vw;
+}
+
+.element {
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.kalar {
+    background-color: #282531;
+}
+
+#itm {
+    color: #F8FFFB;
+}
+
+.sec2 {
+    margin: 6vw;
+}
+
+.sec2 .set {
+    float: left;
+    width: 33%;
+    margin: 40px;
+    height: 100%;
+}
+
+.unset::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.sec6 p {
+    color: white;
+}
+
+.set6 {
+    float: left;
+    width: 16%;
+}
+
+.kalar2 {
+    background-color: #060213;
+}
