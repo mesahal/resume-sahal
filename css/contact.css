@@ -21,6 +21,11 @@ body {
     color: #F8FFFB;
 }
 
+.set6 {
+    float: left;
+    width: 16%;
+}
+
 .sec6 p {
     color: white;
 }
@@ -34,6 +39,8 @@ body {
 
 .sec2 {
     margin: 10%;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .kalar2 {
