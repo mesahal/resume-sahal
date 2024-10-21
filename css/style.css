@@ -13,6 +13,10 @@ body {
 
 /*------- Home --------*/
 
+#home {
+  padding: 10vw;
+}
+
 .sec-1 {
   padding-top: 0.5vw;
 }
@@ -21,29 +25,14 @@ body {
   background-color: #060213;
 }
 
-#navbarSupportedContent {
-  font-size: 125%;
-}
-
-.main-image {
-  width: 100%;
-  height: 100%;
-}
-
 .nav-size {
   padding: 1vw;
-}
-
-#salam {
-  font-size: 250%;
 }
 
 .element {
   font-weight: 700;
   color: rgb(255, 255, 255);
 }
-
-/*------- Experience --------*/
 
 .sec2 {
   margin-top: 6vw;
@@ -62,15 +51,26 @@ body {
   font-size: 400%;
 }
 
-/*------- Achievements --------*/
+.main-image {
+  width: 100%;
+  height: 100%;
+}
 
-/*------- Work --------*/
+#navbarSupportedContent {
+  font-size: 125%;
+}
 
-/*------- Education --------*/
+#itm {
+  color: #f8fffb;
+}
 
-/*------- Blog --------*/
+#salam {
+  font-size: 250%;
+}
 
-/*------- Contact --------*/
+#name-color {
+  color: #ff724c;
+}
 
 #itm3 {
   margin-top: 7vw;
@@ -80,13 +80,42 @@ body {
   font-size: 90%;
 }
 
-#itm {
-  color: #f8fffb;
+/*------- Experience --------*/
+.exp .card {
+  background-color: #ffe7e2;
+  border: none;
+  border-radius: 1vw;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  width: 100%;
+  height: 100%;
 }
 
-#name-color {
-  color: #ff724c;
+.exp .card p {
+  text-align: center;
+  font-size: 125%;
+  text-decoration: none;
 }
+
+.exp .card h3 {
+  text-align: center;
+  font-size: 125%;
+  color: black;
+}
+
+.exp .card:hover {
+  background-color: white;
+  box-shadow: 2px 9px 20px lightgrey;
+}
+/*------- Achievements --------*/
+
+/*------- Work --------*/
+
+/*------- Education --------*/
+
+/*------- Blog --------*/
+
+/*------- Contact --------*/
 
 .sec3 {
   margin-top: 1vw;
