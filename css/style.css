@@ -11,7 +11,7 @@ body {
   margin-top: 50px;
 }
 
-/*------- Section 1 --------*/
+/*------- Home --------*/
 
 .sec-1 {
   padding-top: 0.5vw;
@@ -28,7 +28,6 @@ body {
 .main-image {
   width: 100%;
   height: 100%;
-  /* margin-left: 200px; */
 }
 
 .nav-size {
@@ -44,7 +43,7 @@ body {
   color: rgb(255, 255, 255);
 }
 
-/*------- Section 2 --------*/
+/*------- Experience --------*/
 
 .sec2 {
   margin-top: 6vw;
@@ -62,6 +61,16 @@ body {
   font-weight: 700;
   font-size: 400%;
 }
+
+/*------- Achievements --------*/
+
+/*------- Work --------*/
+
+/*------- Education --------*/
+
+/*------- Blog --------*/
+
+/*------- Contact --------*/
 
 #itm3 {
   margin-top: 7vw;
