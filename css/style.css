@@ -1,147 +1,168 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #282531;
-    color: #F8FFFB;
+  font-family: "Poppins", sans-serif;
+  background-color: #060213;
+  color: #f8fffb;
+}
+
+.counter {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*------- Section 1 --------*/
+
+.sec-1 {
+  padding-top: 0.5vw;
+}
+
+.bar-bg {
+  background-color: #060213;
+}
+
+#navbarSupportedContent {
+  font-size: 125%;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  /* margin-left: 200px; */
+}
+
+.nav-size {
+  padding: 1vw;
 }
 
 #salam {
-    font-size: 200%;
-}
-
-.sec1 {
-    padding-top: .5vw;
+  font-size: 250%;
 }
 
 .element {
-    font-weight: 700;
-    color: rgb(255, 255, 255);
+  font-weight: 700;
+  color: rgb(255, 255, 255);
 }
 
-.kalar {
-    background-color: #282531;
-}
+/*------- Section 2 --------*/
 
 .sec2 {
-    margin-top: 6vw;
-    padding-bottom: 5vw;
+  margin-top: 6vw;
+  padding-bottom: 5vw;
 }
 
 .sec2 p {
-    margin-top: 5vw;
-    color: #21B573;
-    font-size: 200%;
-    line-height: 123%;
+  margin-top: 5vw;
+  color: #21b573;
+  font-size: 200%;
+  line-height: 123%;
 }
 
 .sec2 h1 {
-    font-weight: 700;
-    font-size: 400%;
+  font-weight: 700;
+  font-size: 400%;
 }
 
 #itm3 {
-    margin-top: 7vw;
-    text-decoration: none;
-    font-weight: 600;
-    color: rgb(179, 178, 178);
-    font-size: 90%;
+  margin-top: 7vw;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 90%;
 }
 
 #itm {
-    color: #F8FFFB;
+  color: #f8fffb;
 }
 
-#sobuj {
-    color: #21B573;
+#name-color {
+  color: #ff724c;
 }
 
 .sec3 {
-    margin-top: 1vw;
-    margin-bottom: 5vw;
+  margin-top: 1vw;
+  margin-bottom: 5vw;
 }
 
 .sec3 h1 {
-    margin-bottom: 6vw;
+  margin-bottom: 6vw;
 }
 
 .sec3 .card {
-    background-color: #F8FFFB;
-    border: none;
-    border-radius: 1vw;
-    padding-bottom: 2vw;
-    padding-top: 2vw;
-    width: 100%;
-    height: 100%;
+  background-color: #f8fffb;
+  border: none;
+  border-radius: 1vw;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  width: 100%;
+  height: 100%;
 }
 
 #itm2 {
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 100%;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 100%;
 }
 
 .sec3 .card p {
-    text-align: center;
-    font-size: 125%;
-    text-decoration: none;
+  text-align: center;
+  font-size: 125%;
+  text-decoration: none;
 }
 
 .sec3 .card h3 {
-    text-align: center;
-    font-size: 125%;
-    color: black;
+  text-align: center;
+  font-size: 125%;
+  color: black;
 }
 
 .sec3 .card:hover {
-    background-color: white;
-    box-shadow: 2px 9px 20px lightgrey;
+  background-color: white;
+  box-shadow: 2px 9px 20px lightgrey;
 }
 
 .sec4 {
-    padding-top: 5vw;
-    margin-bottom: 5vw;
+  padding-top: 5vw;
+  margin-bottom: 5vw;
 }
 
 .sec4 .card {
-    padding-top: 1vw;
-    border-radius: 4%;
-    border: none;
-    box-shadow: 2px 9px 20px lightgrey;
-    width: 100%;
-    height: 100%;
+  padding-top: 1vw;
+  border-radius: 4%;
+  border: none;
+  box-shadow: 2px 9px 20px lightgrey;
+  width: 100%;
+  height: 100%;
 }
 
 .sec4 h3 {
-    font-size: 2vw;
-    color: black;
+  font-size: 2vw;
+  color: black;
 }
 
 .sec5 {
-    margin-top: 5vw;
-    margin-bottom: 4vw;
-    height: 100%;
-    width: 100%;
+  margin-top: 5vw;
+  margin-bottom: 4vw;
+  height: 100%;
+  width: 100%;
 }
 
 .sec6 p {
-    color: white;
+  color: white;
 }
 
 .set {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .unset::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .set6 {
-    float: left;
-    width: 16%;
-}
-
-.kalar2 {
-    background-color: #060213;
+  float: left;
+  width: 16%;
 }
