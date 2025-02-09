@@ -1,51 +1,65 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/experience", label: "Experience" },
+    { path: "/achievements", label: "Achievements" },
+    { path: "/work", label: "Work" },
+    { path: "/education", label: "Education" },
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" }
+  ];
+
   return (
-    <nav className="bg-gray-800 p-4 fixed w-full top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-xl font-bold">Sahal</div>
-        <div className="hidden lg:flex space-x-6">
-          <Link to="/" className="text-white hover:text-orange-500">
-            Home
+    <nav className="fixed w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+            Sahal
           </Link>
-          <Link to="/experience" className="text-white hover:text-orange-500">
-            Experience
-          </Link>
-          <Link to="/achievements" className="text-white hover:text-orange-500">
-            Achievements
-          </Link>
-          <Link to="/work" className="text-white hover:text-orange-500">
-            Work
-          </Link>
-          <Link to="/education" className="text-white hover:text-orange-500">
-            Education
-          </Link>
-          <Link to="/blog" className="text-white hover:text-orange-500">
-            Blog
-          </Link>
-          <Link to="/contact" className="text-white hover:text-orange-500">
-            Contact
-          </Link>
-        </div>
-        <div className="lg:hidden">
-          <button className="text-white focus:outline-none">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-gray-300 hover:text-orange-500 transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-gray-300 hover:text-white"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className="block py-2 text-gray-300 hover:text-orange-500 transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );

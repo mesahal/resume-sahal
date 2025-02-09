@@ -1,28 +1,94 @@
-import React from 'react';
+import { Github, Linkedin, Twitter, Instagram, Mail, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
   const socials = [
-    { name: "LinkedIn", icon: "resource/linkedin.png", link: "https://www.linkedin.com/in/me-sahal/" },
-    { name: "Facebook", icon: "resource/facebook.jpg", link: "https://www.facebook.com/profile.php?id=100009204558204" },
-    { name: "Twitter", icon: "resource/twitter.png", link: "https://twitter.com/me__sahal" },
-    { name: "Instagram", icon: "resource/insta.png", link: "https://www.instagram.com/me__sahal/" },
-    { name: "GitHub", icon: "resource/github.png", link: "https://github.com/Sahal2000" },
-    { name: "Quora", icon: "resource/quora.png", link: "https://www.quora.com/profile/Md-Sahal-2" }
+    {
+      name: "GitHub",
+      icon: <Github size={24} />,
+      link: "https://github.com/Sahal2000",
+      color: "hover:text-gray-400"
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={24} />,
+      link: "https://www.linkedin.com/in/me-sahal/",
+      color: "hover:text-blue-400"
+    },
+    {
+      name: "Twitter",
+      icon: <Twitter size={24} />,
+      link: "https://twitter.com/me__sahal",
+      color: "hover:text-blue-400"
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram size={24} />,
+      link: "https://www.instagram.com/me__sahal/",
+      color: "hover:text-pink-400"
+    },
+    {
+      name: "Email",
+      icon: <Mail size={24} />,
+      link: "mailto:me.sahal2000@gmail.com",
+      color: "hover:text-red-400"
+    }
   ];
 
   return (
-    <section id="contact" className="bg-gray-900 py-10">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center gap-4">
-          {socials.map((social, index) => (
-            <div key={index} className="w-16 h-16">
-              <a href={social.link}>
-                <img src={social.icon} alt={social.name} className="w-full h-full rounded-full" />
-              </a>
+    <section className="py-20 px-4">
+      <div className="container mx-auto max-w-4xl">
+        <div className="text-center space-y-4 mb-12">
+          <h1 className="text-4xl font-bold">Get in Touch</h1>
+          <p className="text-gray-400">Let's connect and create something amazing together</p>
+        </div>
+
+        <div className="bg-gray-800 rounded-xl p-8 mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <MessageSquare className="text-orange-500" size={24} />
+            <h2 className="text-2xl font-semibold">Send a Message</h2>
+          </div>
+
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+              />
             </div>
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+            ></textarea>
+            <button
+              type="submit"
+              className="w-full md:w-auto px-8 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg font-semibold transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div className="flex justify-center gap-6">
+          {socials.map((social) => (
+            <a
+              key={social.name}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full bg-gray-800 ${social.color} transition-colors duration-300`}
+              aria-label={social.name}
+            >
+              {social.icon}
+            </a>
           ))}
         </div>
-        <p className="text-center text-white mt-5">Copyright © me-sahal</p>
       </div>
     </section>
   );
