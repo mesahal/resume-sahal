@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
+/* Light mode styles */
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Section title styles */
+.section-title {
+  @apply relative inline-block;
+}
+
+.section-title::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transform scale-x-0 transition-transform duration-300;
+}
+
+.section-title:hover::after {
+  @apply scale-x-100;
+}
+
+/* Animations */
 @keyframes float {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -46,4 +75,34 @@
 
 .animate-blink {
   animation: blink 1s step-end infinite;
+}
+
+/* Title gradients */
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styles */
+.card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 transition-opacity duration-300;
+}
+
+.card:hover::before {
+  @apply opacity-100;
+}
+
+/* Dark mode specific styles */
+.dark .card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .gradient-text {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }

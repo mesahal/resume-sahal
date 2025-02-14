@@ -8,42 +8,24 @@ import Work from "./Work";
 import Education from "./Education";
 import Blog from "./Blog";
 import Contact from "./Contact";
-import {
-  Sun,
-  Moon,
-  Menu,
-  X,
-  ChevronUp,
-  Trophy,
-  ExternalLink,
-  BookOpen,
-  Github,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Mail,
-  MessageSquare,
-  GraduationCap,
-  Calendar,
-  Building2,
-  Code2,
-} from "lucide-react";
-import { Github as GitHub, Terminal, Binary, Cpu } from "lucide-react";
+import { Sun, Moon, Menu, X, ChevronUp } from "lucide-react";
+
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Toggle dark mode and apply it to the root element
   useEffect(() => {
+    const root = document.documentElement;
     if (darkMode) {
-      document.documentElement.classList.add("dark");
+      root.classList.add("dark");
+      root.style.colorScheme = "dark";
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
+      root.style.colorScheme = "light";
     }
   }, [darkMode]);
 
-  // Show scroll-to-top button when scrolling
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
@@ -52,7 +34,6 @@ const Portfolio = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation links
   const sections = [
     { id: "home", label: "Home" },
     { id: "experience", label: "Experience" },
@@ -63,7 +44,6 @@ const Portfolio = () => {
     { id: "contact", label: "Contact" },
   ];
 
-  // Animation variants
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
@@ -77,36 +57,24 @@ const Portfolio = () => {
       transition: { duration: 0.3 },
     },
   };
-  const floatingIcons = [
-    { icon: <Terminal size={24} />, delay: "0" },
-    { icon: <Code2 size={24} />, delay: "1000" },
-    { icon: <Binary size={24} />, delay: "2000" },
-    { icon: <Cpu size={24} />, delay: "3000" },
-  ];
-  return (
-    <div className="min-h-screen bg-[url('https://images.unsplash.com/photo-1522252234503-e356532cafd5')] bg-cover bg-fixed bg-center before:content-[''] before:absolute before:inset-0 before:bg-gray-900/85">
-      {/* Animated Background Icons */}
-      {/* {floatingIcons.map((item, index) => (
-        <div
-          key={index}
-          className="absolute text-white"
-          style={{
-            animation: `float 15s infinite linear`,
-            // animationDelay: `${item.delay}ms`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-        >
-          {item.icon}
-        </div>
-      ))} */}
 
+  return (
+    <div
+      className={`min-h-screen bg-[url('https://images.unsplash.com/photo-1522252234503-e356532cafd5')] bg-cover bg-fixed bg-center before:content-[''] before:absolute before:inset-0 ${
+        darkMode ? "before:bg-gray-900/85" : "before:bg-gray-100/90"
+      }`}
+    >
       {/* Navigation Bar */}
       <motion.nav
         initial="hidden"
         animate="visible"
         variants={navVariants}
-        className="fixed top-0 w-full z-50 bg-opacity-95 backdrop-blur-md border-b transition-colors duration-300 dark:bg-gray-900/95 dark:border-gray-800 bg-white/95 border-gray-200"
+        className={`fixed top-0 w-full z-50 backdrop-blur-md border-b transition-colors duration-300 
+          ${
+            darkMode
+              ? "bg-gray-900/95 border-gray-800 text-gray-100"
+              : "bg-white/95 border-gray-200 text-gray-900"
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
@@ -117,10 +85,10 @@ const Portfolio = () => {
               duration={500}
               className="text-2xl font-bold cursor-pointer relative group"
             >
-              <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
                 Sahal
               </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -132,10 +100,11 @@ const Portfolio = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer transition-all duration-200 hover:text-orange-500 relative group dark:text-gray-300 dark:hover:text-orange-500"
+                  className={`cursor-pointer transition-all duration-200 hover:text-purple-400 relative group 
+                    ${darkMode ? "text-gray-300" : "text-gray-600"}`}
                 >
                   {label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
 
@@ -144,7 +113,12 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-full transition-colors duration-200 dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
+                className={`p-2 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50
+                  ${
+                    darkMode
+                      ? "bg-gray-800 hover:bg-gray-700 text-yellow-400"
+                      : "bg-gray-100 hover:bg-gray-200 text-gray-600"
+                  }`}
                 aria-label={
                   darkMode ? "Switch to light mode" : "Switch to dark mode"
                 }
@@ -158,7 +132,12 @@ const Portfolio = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors duration-200 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
+              className={`md:hidden p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50
+                ${
+                  darkMode
+                    ? "hover:bg-gray-800 text-gray-300"
+                    : "hover:bg-gray-100 text-gray-600"
+                }`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -183,7 +162,12 @@ const Portfolio = () => {
                     smooth={true}
                     duration={500}
                     onClick={() => setIsOpen(false)}
-                    className="block py-2 px-4 cursor-pointer transition-colors duration-200 rounded-lg dark:text-gray-300 dark:hover:text-orange-500 dark:hover:bg-gray-800 hover:bg-gray-100"
+                    className={`block py-2 px-4 cursor-pointer transition-colors duration-200 rounded-lg
+                      ${
+                        darkMode
+                          ? "text-gray-300 hover:text-purple-400 hover:bg-gray-800"
+                          : "text-gray-600 hover:text-purple-600 hover:bg-gray-100"
+                      }`}
                   >
                     {label}
                   </Link>
@@ -193,7 +177,12 @@ const Portfolio = () => {
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setDarkMode(!darkMode)}
-                  className="w-full py-2 px-4 flex items-center space-x-2 rounded-lg transition-colors duration-200 dark:hover:bg-gray-800 hover:bg-gray-100"
+                  className={`w-full py-2 px-4 flex items-center space-x-2 rounded-lg transition-colors duration-200
+                    ${
+                      darkMode
+                        ? "hover:bg-gray-800 text-yellow-400"
+                        : "hover:bg-gray-100 text-gray-600"
+                    }`}
                 >
                   {darkMode ? <Sun size={20} /> : <Moon size={20} />}
                   <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
@@ -205,24 +194,33 @@ const Portfolio = () => {
       </motion.nav>
 
       {/* Sections */}
-      {sections.map(({ id }) => (
-        <motion.section
-          key={id}
-          id={id}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="min-h-screen pt-20 px-4 md:px-6 lg:px-8"
-        >
-          {id === "home" && <Home />}
-          {id === "experience" && <Experience />}
-          {id === "achievements" && <Achievements />}
-          {id === "work" && <Work />}
-          {id === "education" && <Education />}
-          {id === "blog" && <Blog />}
-          {id === "contact" && <Contact />}
-        </motion.section>
-      ))}
+      <div className={darkMode ? "dark" : ""}>
+        {sections.map(({ id }) => (
+          <motion.section
+            key={id}
+            id={id}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className={`min-h-screen pt-20 px-4 md:px-6 lg:px-8 relative
+              ${darkMode ? "text-gray-100" : "text-gray-900"}`}
+          >
+            {/* Section Title Background */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/50 to-transparent z-0" />
+
+            {/* Section Content */}
+            <div className="relative z-10">
+              {id === "home" && <Home darkMode={darkMode} />}
+              {id === "experience" && <Experience darkMode={darkMode} />}
+              {id === "achievements" && <Achievements darkMode={darkMode} />}
+              {id === "work" && <Work darkMode={darkMode} />}
+              {id === "education" && <Education darkMode={darkMode} />}
+              {id === "blog" && <Blog darkMode={darkMode} />}
+              {id === "contact" && <Contact darkMode={darkMode} />}
+            </div>
+          </motion.section>
+        ))}
+      </div>
 
       {/* Scroll-to-Top Button */}
       <AnimatePresence>
@@ -237,7 +235,7 @@ const Portfolio = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
+                className="p-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 text-white shadow-lg hover:from-purple-500 hover:to-pink-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
                 aria-label="Scroll to top"
               >
                 <ChevronUp size={24} />
@@ -251,5 +249,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
-// Individual Components (Home, Experience, Achievements, etc.) go here...

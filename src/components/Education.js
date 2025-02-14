@@ -35,11 +35,11 @@ const Education = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-900">
+    <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="flex items-center justify-center gap-3 mb-16">
-          <GraduationCap className="w-10 h-10 text-purple-500" />
-          <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <GraduationCap className="w-10 h-10 text-purple-400" />
+          <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
             Educational Journey
           </h1>
         </div>
@@ -66,8 +66,8 @@ const Education = () => {
 
                   <div className="md:w-2/3 space-y-4">
                     <div className="flex items-center gap-3">
-                      <Icon className="text-purple-500" size={24} />
-                      <h3 className="text-2xl font-semibold text-gray-100">
+                      <Icon className="text-purple-400" size={24} />
+                      <h3 className="text-2xl font-semibold text-gray-200">
                         {edu.institution}
                       </h3>
                     </div>

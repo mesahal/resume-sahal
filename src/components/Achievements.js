@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Trophy, ExternalLink } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import { Trophy, ExternalLink } from "lucide-react";
 
 const Achievements = () => {
   const counterRef = useRef(null);
@@ -12,7 +12,9 @@ const Achievements = () => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
         if (counterRef.current) {
-          counterRef.current.textContent = Math.floor(progress * (end - start) + start);
+          counterRef.current.textContent = Math.floor(
+            progress * (end - start) + start
+          );
         }
         if (progress < 1) {
           window.requestAnimationFrame(step);
@@ -45,34 +47,39 @@ const Achievements = () => {
       name: "Codeforces",
       count: "2700+",
       rating: "Max Rating 1694",
-      link: "https://codeforces.com/profile/sahal"
+      link: "https://codeforces.com/profile/sahal",
     },
     {
       name: "LeetCode",
       count: "200+",
       rating: "Max Rating 1747",
-      link: "https://leetcode.com/sahal2000/"
+      link: "https://leetcode.com/sahal2000/",
     },
     {
       name: "AtCoder",
       count: "200+",
       rating: "Max Rating 678",
-      link: "https://atcoder.jp/users/sahal2000"
+      link: "https://atcoder.jp/users/sahal2000",
     },
-    // ... other platforms
   ];
 
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
           Competitive Programming Achievements
         </h1>
 
         <div className="text-center mb-16">
           <div className="text-5xl font-bold">
-            Problems Solved: {" "}
-            <span ref={counterRef} className="text-emerald-500">0</span>+
+            Problems Solved:{" "}
+            <span
+              ref={counterRef}
+              className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+            >
+              0
+            </span>
+            +
           </div>
         </div>
 
@@ -80,15 +87,19 @@ const Achievements = () => {
           {platforms.map((platform, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300"
+              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700/50"
             >
               <div className="flex items-center gap-3 mb-4">
-                <Trophy className="text-orange-500" size={24} />
-                <h3 className="text-xl font-semibold">{platform.name}</h3>
+                <Trophy className="text-purple-400" size={24} />
+                <h3 className="text-xl font-semibold text-gray-200">
+                  {platform.name}
+                </h3>
               </div>
 
               <div className="space-y-2">
-                <p className="text-2xl font-bold text-emerald-400">{platform.count}</p>
+                <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                  {platform.count}
+                </p>
                 {platform.rating && (
                   <p className="text-gray-400">{platform.rating}</p>
                 )}
@@ -98,7 +109,7 @@ const Achievements = () => {
                 href={platform.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-4 text-orange-500 hover:text-orange-400 transition-colors"
+                className="inline-flex items-center gap-2 mt-4 text-purple-400 hover:text-pink-400 transition-colors"
               >
                 View Profile
                 <ExternalLink size={16} />

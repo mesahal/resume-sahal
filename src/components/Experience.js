@@ -1,4 +1,15 @@
-import { Building2, Calendar } from 'lucide-react';
+import {
+  Building2,
+  Calendar,
+  Mail,
+  Github as GitHub,
+  Linkedin,
+  Twitter,
+  Terminal,
+  Code2,
+  Binary,
+  Cpu,
+} from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -19,13 +30,13 @@ const Experience = () => {
       role: "Programming Instructor",
       duration: "2020 - 2021",
       logo: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655",
-    }
+    },
   ];
 
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
           Professional Experience
         </h1>
 
@@ -33,18 +44,18 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group relative bg-gray-800 rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300"
+              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <img
                 src={exp.logo}
                 alt={exp.company}
                 className="w-16 h-16 rounded-lg object-cover mb-4"
               />
 
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <Building2 size={20} className="text-orange-500" />
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2 text-gray-200">
+                <Building2 size={20} className="text-purple-400" />
                 {exp.company}
               </h3>
 
