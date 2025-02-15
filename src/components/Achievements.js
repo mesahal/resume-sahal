@@ -45,21 +45,43 @@ const Achievements = ({ darkMode }) => {
   const platforms = [
     {
       name: "Codeforces",
-      count: "2700+",
+      count: "2750+",
       rating: "Max Rating 1694",
       link: "https://codeforces.com/profile/sahal",
+      logo: "https://cdn.iconscout.com/icon/free/png-256/free-codeforces-3628695-3029920.png",
     },
     {
       name: "LeetCode",
-      count: "200+",
+      count: "250+",
       rating: "Max Rating 1747",
       link: "https://leetcode.com/sahal2000/",
+      logo: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
     },
     {
       name: "AtCoder",
       count: "200+",
       rating: "Max Rating 678",
       link: "https://atcoder.jp/users/sahal2000",
+      logo: "https://img.atcoder.jp/assets/atcoder.png",
+    },
+    {
+      name: "CodeChef",
+      count: "50+",
+      rating: "Max Rating 1759",
+      link: "https://www.codechef.com/users/sahal2000",
+      logo: "https://cdn.codechef.com/images/cc-logo.svg",
+    },
+    {
+      name: "LightOJ",
+      count: "100+",
+      link: "https://lightoj.com/user/sahal",
+      logo: "https://static.lightoj.com/assets/loj-logo-inverted.png",
+    },
+    {
+      name: "UVa Online Judge",
+      count: "150+",
+      link: "https://uhunt.onlinejudge.org/id/955955",
+      logo: "https://uhunt.onlinejudge.org/images/uva.png",
     },
   ];
 
@@ -91,14 +113,20 @@ const Achievements = ({ darkMode }) => {
           {platforms.map((platform, index) => (
             <div
               key={index}
-              className={`group rounded-xl p-6 transition-all duration-300 border ${
+              className={`group rounded-xl p-6 transition-all duration-300 border hover:transform hover:scale-[1.02] ${
                 darkMode
                   ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
                   : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
               }`}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <Trophy className="text-purple-400" size={24} />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 relative flex items-center justify-center">
+                  <img
+                    src={platform.logo}
+                    alt={`${platform.name} logo`}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
                 <h3
                   className={`text-xl font-semibold ${
                     darkMode ? "text-gray-200" : "text-gray-800"
@@ -110,10 +138,14 @@ const Achievements = ({ darkMode }) => {
 
               <div className="space-y-2">
                 <p className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  {platform.count}
+                  {platform.count} Problems
                 </p>
                 {platform.rating && (
-                  <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
+                  <p
+                    className={`${
+                      darkMode ? "text-gray-400" : "text-gray-600"
+                    } font-medium`}
+                  >
                     {platform.rating}
                   </p>
                 )}

@@ -7,7 +7,9 @@ import Achievements from "./Achievements";
 import Work from "./Work";
 import Education from "./Education";
 import Blog from "./Blog";
+import Videos from "./Videos";
 import Contact from "./Contact";
+import FloatingIcons from "./FloatingIcons";
 import { Sun, Moon, Menu, X, ChevronUp } from "lucide-react";
 
 const Portfolio = () => {
@@ -41,6 +43,7 @@ const Portfolio = () => {
     { id: "work", label: "Work" },
     { id: "education", label: "Education" },
     { id: "blog", label: "Blog" },
+    { id: "videos", label: "Videos" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -202,9 +205,12 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`min-h-screen pt-20 px-4 md:px-6 lg:px-8 relative
+            className={`min-h-screen pt-20 px-4 md:px-6 lg:px-8 relative overflow-hidden
               ${darkMode ? "text-gray-100" : "text-gray-800"}`}
           >
+            {/* Floating Icons Background */}
+            <FloatingIcons darkMode={darkMode} />
+
             {/* Section Content */}
             <div className="relative z-10">
               {id === "home" && <Home darkMode={darkMode} />}
@@ -213,6 +219,7 @@ const Portfolio = () => {
               {id === "work" && <Work darkMode={darkMode} />}
               {id === "education" && <Education darkMode={darkMode} />}
               {id === "blog" && <Blog darkMode={darkMode} />}
+              {id === "videos" && <Videos darkMode={darkMode} />}
               {id === "contact" && <Contact darkMode={darkMode} />}
             </div>
           </motion.section>

@@ -4,6 +4,9 @@ import {
   Github as GitHub,
   Linkedin,
   Twitter,
+  Youtube,
+  Facebook,
+  Instagram,
   Terminal,
   Code2,
   Binary,
@@ -71,28 +74,46 @@ const Home = ({ darkMode }) => {
 
   const socialLinks = [
     {
-      icon: <Mail size={20} />,
-      href: "mailto:me.sahal2000@gmail.com",
-      label: "Email",
-      color: "text-purple-400",
+      icon: <Linkedin size={20} />,
+      href: "https://www.linkedin.com/in/me-sahal/",
+      label: "LinkedIn",
+      color: "text-blue-400",
     },
     {
       icon: <GitHub size={20} />,
       href: "https://github.com/Sahal2000",
       label: "GitHub",
-      color: "text-blue-400",
+      color: "text-gray-400",
     },
     {
-      icon: <Linkedin size={20} />,
-      href: "https://www.linkedin.com/in/me-sahal/",
-      label: "LinkedIn",
-      color: "text-cyan-400",
+      icon: <Mail size={20} />,
+      href: "mailto:me.sahal2000@gmail.com",
+      label: "Email",
+      color: "text-red-400",
+    },
+    {
+      icon: <Facebook size={20} />,
+      href: "https://facebook.com/me.sahal2000",
+      label: "Facebook",
+      color: "text-blue-500",
+    },
+    {
+      icon: <Instagram size={20} />,
+      href: "https://www.instagram.com/me__sahal/",
+      label: "Instagram",
+      color: "text-pink-500",
     },
     {
       icon: <Twitter size={20} />,
       href: "https://twitter.com/me__sahal",
       label: "Twitter",
-      color: "text-emerald-400",
+      color: "text-sky-400",
+    },
+    {
+      icon: <Youtube size={20} />,
+      href: "https://youtube.com/@me_sahal",
+      label: "YouTube",
+      color: "text-red-500",
     },
   ];
 
@@ -145,7 +166,7 @@ const Home = ({ darkMode }) => {
             </div>
 
             <div
-              className={`flex gap-4 transform transition-all duration-1000 delay-500 ${
+              className={`flex flex-wrap gap-4 transform transition-all duration-1000 delay-500 ${
                 showRoles
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"

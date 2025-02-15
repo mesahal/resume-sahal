@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Github,
   Linkedin,
@@ -5,10 +6,73 @@ import {
   Instagram,
   Mail,
   MessageSquare,
+  Facebook,
+  Youtube,
+  Loader2,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = ({ darkMode }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: null });
+
+    try {
+      await emailjs.send(
+        "service_df5p3hu",
+        "template_55ulj5l",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: "Sahal",
+          subject: `New Contact Form Message from ${formData.name}`,
+          reply_to: formData.email,
+        },
+        "nwJdzht2-mn---wMD"
+      );
+
+      setStatus({ loading: false, success: true, error: null });
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => {
+        setStatus((prev) => ({ ...prev, success: false }));
+      }, 5000);
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: "Failed to send message. Please try again.",
+      });
+    }
+  };
+
   const socials = [
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={24} />,
+      link: "https://www.linkedin.com/in/me-sahal/",
+      color: "hover:text-blue-500",
+    },
     {
       name: "GitHub",
       icon: <Github size={24} />,
@@ -16,28 +80,34 @@ const Contact = ({ darkMode }) => {
       color: "hover:text-gray-400",
     },
     {
-      name: "LinkedIn",
-      icon: <Linkedin size={24} />,
-      link: "https://www.linkedin.com/in/me-sahal/",
-      color: "hover:text-purple-400",
+      name: "Email",
+      icon: <Mail size={24} />,
+      link: "mailto:me.sahal2000@gmail.com",
+      color: "hover:text-red-400",
     },
     {
-      name: "Twitter",
-      icon: <Twitter size={24} />,
-      link: "https://twitter.com/me__sahal",
-      color: "hover:text-pink-400",
+      name: "Facebook",
+      icon: <Facebook size={24} />,
+      link: "https://facebook.com/me.sahal2000",
+      color: "hover:text-blue-500",
     },
     {
       name: "Instagram",
       icon: <Instagram size={24} />,
       link: "https://www.instagram.com/me__sahal/",
-      color: "hover:text-red-400",
+      color: "hover:text-pink-500",
     },
     {
-      name: "Email",
-      icon: <Mail size={24} />,
-      link: "mailto:me.sahal2000@gmail.com",
-      color: "hover:text-purple-400",
+      name: "Twitter",
+      icon: <Twitter size={24} />,
+      link: "https://twitter.com/me__sahal",
+      color: "hover:text-sky-400",
+    },
+    {
+      name: "YouTube",
+      icon: <Youtube size={24} />,
+      link: "https://youtube.com/@me_sahal",
+      color: "hover:text-red-500",
     },
   ];
 
@@ -71,11 +141,15 @@ const Contact = ({ darkMode }) => {
             </h2>
           </div>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
+                required
                 className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
                   darkMode
                     ? "bg-gray-700/50 border-gray-600 text-gray-200"
@@ -84,7 +158,11 @@ const Contact = ({ darkMode }) => {
               />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
+                required
                 className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
                   darkMode
                     ? "bg-gray-700/50 border-gray-600 text-gray-200"
@@ -93,7 +171,11 @@ const Contact = ({ darkMode }) => {
               />
             </div>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Your Message"
+              required
               rows="4"
               className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
                 darkMode
@@ -101,16 +183,35 @@ const Contact = ({ darkMode }) => {
                   : "bg-white border-gray-300 text-gray-800"
               }`}
             ></textarea>
+
+            {status.error && (
+              <p className="text-red-500 text-sm">{status.error}</p>
+            )}
+
+            {status.success && (
+              <p className="text-green-500 text-sm">
+                Message sent successfully!
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105"
+              disabled={status.loading}
+              className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              Send Message
+              {status.loading ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         </div>
 
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {socials.map((social) => (
             <a
               key={social.name}
