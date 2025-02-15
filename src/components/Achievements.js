@@ -115,7 +115,7 @@ const Achievements = ({ darkMode }) => {
               key={index}
               className={`group rounded-xl p-6 transition-all duration-300 border hover:transform hover:scale-[1.02] ${
                 darkMode
-                  ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
+                  ? "bg-gray-500/50 border-gray-700/50 hover:bg-gray-700/50"
                   : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
               }`}
             >
