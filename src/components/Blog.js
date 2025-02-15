@@ -1,6 +1,6 @@
 import { BookOpen, ExternalLink } from "lucide-react";
 
-const Blog = () => {
+const Blog = ({ darkMode }) => {
   const blogs = [
     {
       title: "Camera Specification – HDR",
@@ -38,7 +38,11 @@ const Blog = () => {
           {blogs.map((blog, index) => (
             <article
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 border border-gray-700/50"
+              className={`group rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 border ${
+                darkMode
+                  ? "bg-gray-800/50 border-gray-700/50"
+                  : "bg-white/80 border-gray-200/50"
+              }`}
             >
               <div className="relative h-48">
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
@@ -55,12 +59,22 @@ const Blog = () => {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <BookOpen className="text-purple-400" size={20} />
-                  <h3 className="text-xl font-semibold text-gray-200">
+                  <h3
+                    className={`text-xl font-semibold ${
+                      darkMode ? "text-gray-200" : "text-gray-800"
+                    }`}
+                  >
                     {blog.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-400 mb-4">{blog.excerpt}</p>
+                <p
+                  className={`mb-4 ${
+                    darkMode ? "text-gray-400" : "text-gray-600"
+                  }`}
+                >
+                  {blog.excerpt}
+                </p>
 
                 <a
                   href={blog.link}

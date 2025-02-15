@@ -7,7 +7,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 
-const Contact = () => {
+const Contact = ({ darkMode }) => {
   const socials = [
     {
       name: "GitHub",
@@ -48,15 +48,25 @@ const Contact = () => {
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
             Get in Touch
           </h1>
-          <p className="text-gray-400">
+          <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
             Let's connect and create something amazing together
           </p>
         </div>
 
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-12 border border-gray-700/50">
+        <div
+          className={`rounded-xl p-8 mb-12 border ${
+            darkMode
+              ? "bg-gray-800/50 border-gray-700/50"
+              : "bg-white/80 border-gray-200/50"
+          }`}
+        >
           <div className="flex items-center gap-3 mb-6">
             <MessageSquare className="text-purple-400" size={24} />
-            <h2 className="text-2xl font-semibold text-gray-200">
+            <h2
+              className={`text-2xl font-semibold ${
+                darkMode ? "text-gray-200" : "text-gray-800"
+              }`}
+            >
               Send a Message
             </h2>
           </div>
@@ -66,18 +76,30 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-lg bg-gray-700/50 border border-gray-600 focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none transition-colors text-gray-200"
+                className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
+                  darkMode
+                    ? "bg-gray-700/50 border-gray-600 text-gray-200"
+                    : "bg-white border-gray-300 text-gray-800"
+                }`}
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-lg bg-gray-700/50 border border-gray-600 focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none transition-colors text-gray-200"
+                className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
+                  darkMode
+                    ? "bg-gray-700/50 border-gray-600 text-gray-200"
+                    : "bg-white border-gray-300 text-gray-800"
+                }`}
               />
             </div>
             <textarea
               placeholder="Your Message"
               rows="4"
-              className="w-full px-4 py-3 rounded-lg bg-gray-700/50 border border-gray-600 focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none transition-colors text-gray-200"
+              className={`w-full px-4 py-3 rounded-lg border focus:ring-1 focus:ring-purple-400 outline-none transition-colors ${
+                darkMode
+                  ? "bg-gray-700/50 border-gray-600 text-gray-200"
+                  : "bg-white border-gray-300 text-gray-800"
+              }`}
             ></textarea>
             <button
               type="submit"
@@ -95,7 +117,13 @@ const Contact = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 ${social.color} transition-all duration-300 transform hover:scale-110`}
+              className={`p-3 rounded-full border transition-all duration-300 transform hover:scale-110 ${
+                social.color
+              } ${
+                darkMode
+                  ? "bg-gray-800/50 border-gray-700/50"
+                  : "bg-white/80 border-gray-200/50"
+              }`}
               aria-label={social.name}
             >
               {social.icon}

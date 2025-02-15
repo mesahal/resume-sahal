@@ -61,7 +61,7 @@ const Portfolio = () => {
   return (
     <div
       className={`min-h-screen bg-[url('https://images.unsplash.com/photo-1522252234503-e356532cafd5')] bg-cover bg-fixed bg-center before:content-[''] before:absolute before:inset-0 ${
-        darkMode ? "before:bg-gray-900/85" : "before:bg-gray-100/90"
+        darkMode ? "before:bg-gray-900/85" : "before:bg-gray-50/90"
       }`}
     >
       {/* Navigation Bar */}
@@ -73,7 +73,7 @@ const Portfolio = () => {
           ${
             darkMode
               ? "bg-gray-900/95 border-gray-800 text-gray-100"
-              : "bg-white/95 border-gray-200 text-gray-900"
+              : "bg-white/95 border-gray-200 text-gray-800"
           }`}
       >
         <div className="container mx-auto px-4">
@@ -203,11 +203,8 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`min-h-screen pt-20 px-4 md:px-6 lg:px-8 relative
-              ${darkMode ? "text-gray-100" : "text-gray-900"}`}
+              ${darkMode ? "text-gray-100" : "text-gray-800"}`}
           >
-            {/* Section Title Background */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/50 to-transparent z-0" />
-
             {/* Section Content */}
             <div className="relative z-10">
               {id === "home" && <Home darkMode={darkMode} />}
@@ -235,7 +232,7 @@ const Portfolio = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 text-white shadow-lg hover:from-purple-500 hover:to-pink-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+                className="p-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 text-white hover:from-purple-500 hover:to-pink-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
                 aria-label="Scroll to top"
               >
                 <ChevronUp size={24} />

@@ -6,7 +6,7 @@ import {
   School,
 } from "lucide-react";
 
-const Education = () => {
+const Education = ({ darkMode }) => {
   const education = [
     {
       institution: "Jahangirnagar University",
@@ -50,7 +50,11 @@ const Education = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50"
+                className={`group relative rounded-xl p-6 transition-all duration-300 border ${
+                  darkMode
+                    ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
+                    : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
+                }`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -67,14 +71,28 @@ const Education = () => {
                   <div className="md:w-2/3 space-y-4">
                     <div className="flex items-center gap-3">
                       <Icon className="text-purple-400" size={24} />
-                      <h3 className="text-2xl font-semibold text-gray-200">
+                      <h3
+                        className={`text-2xl font-semibold ${
+                          darkMode ? "text-gray-200" : "text-gray-800"
+                        }`}
+                      >
                         {edu.institution}
                       </h3>
                     </div>
 
-                    <p className="text-xl text-gray-300 pl-9">{edu.degree}</p>
+                    <p
+                      className={`text-xl pl-9 ${
+                        darkMode ? "text-gray-300" : "text-gray-700"
+                      }`}
+                    >
+                      {edu.degree}
+                    </p>
 
-                    <div className="flex items-center gap-2 text-gray-400 pl-9">
+                    <div
+                      className={`flex items-center gap-2 pl-9 ${
+                        darkMode ? "text-gray-400" : "text-gray-500"
+                      }`}
+                    >
                       <Calendar size={16} />
                       <span className="text-sm">{edu.duration}</span>
                     </div>

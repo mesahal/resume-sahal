@@ -8,7 +8,7 @@
 
 /* Light mode styles */
 body {
-  @apply bg-gray-100 text-gray-900;
+  @apply bg-gray-50 text-gray-800;
 }
 
 /* Dark mode styles */
@@ -80,13 +80,19 @@ body {
 /* Title gradients */
 .gradient-text {
   @apply bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Card styles */
 .card {
   @apply relative overflow-hidden rounded-xl transition-all duration-300;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card {
+  @apply bg-gray-800/50;
+}
+
+.card:not(.dark) {
+  @apply bg-white/80;
 }
 
 .card::before {
@@ -96,13 +102,4 @@ body {
 
 .card:hover::before {
   @apply opacity-100;
-}
-
-/* Dark mode specific styles */
-.dark .card {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dark .gradient-text {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }

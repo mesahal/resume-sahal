@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Trophy, ExternalLink } from "lucide-react";
 
-const Achievements = () => {
+const Achievements = ({ darkMode }) => {
   const counterRef = useRef(null);
   const hasAnimated = useRef(false);
 
@@ -71,7 +71,11 @@ const Achievements = () => {
         </h1>
 
         <div className="text-center mb-16">
-          <div className="text-5xl font-bold">
+          <div
+            className={`text-5xl font-bold ${
+              darkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
             Problems Solved:{" "}
             <span
               ref={counterRef}
@@ -87,11 +91,19 @@ const Achievements = () => {
           {platforms.map((platform, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700/50"
+              className={`group rounded-xl p-6 transition-all duration-300 border ${
+                darkMode
+                  ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
+                  : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
+              }`}
             >
               <div className="flex items-center gap-3 mb-4">
                 <Trophy className="text-purple-400" size={24} />
-                <h3 className="text-xl font-semibold text-gray-200">
+                <h3
+                  className={`text-xl font-semibold ${
+                    darkMode ? "text-gray-200" : "text-gray-800"
+                  }`}
+                >
                   {platform.name}
                 </h3>
               </div>
@@ -101,7 +113,9 @@ const Achievements = () => {
                   {platform.count}
                 </p>
                 {platform.rating && (
-                  <p className="text-gray-400">{platform.rating}</p>
+                  <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
+                    {platform.rating}
+                  </p>
                 )}
               </div>
 
