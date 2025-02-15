@@ -56,7 +56,7 @@ const Videos = ({ darkMode }) => {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-          Video Content
+          Content Creation
         </h1>
 
         <Swiper

@@ -76,7 +76,7 @@ const Contact = ({ darkMode }) => {
     {
       name: "GitHub",
       icon: <Github size={24} />,
-      link: "https://github.com/Sahal2000",
+      link: "https://github.com/mesahal",
       color: "hover:text-gray-400",
     },
     {
@@ -88,13 +88,13 @@ const Contact = ({ darkMode }) => {
     {
       name: "Facebook",
       icon: <Facebook size={24} />,
-      link: "https://facebook.com/me.sahal2000",
+      link: "https://www.facebook.com/memdsahal",
       color: "hover:text-blue-500",
     },
     {
       name: "Instagram",
       icon: <Instagram size={24} />,
-      link: "https://www.instagram.com/me__sahal/",
+      link: "https://www.instagram.com/me_md_sahal",
       color: "hover:text-pink-500",
     },
     {
@@ -106,7 +106,7 @@ const Contact = ({ darkMode }) => {
     {
       name: "YouTube",
       icon: <Youtube size={24} />,
-      link: "https://youtube.com/@me_sahal",
+      link: "https://www.youtube.com/@me__sahal",
       color: "hover:text-red-500",
     },
   ];

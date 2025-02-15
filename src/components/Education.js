@@ -1,4 +1,7 @@
 import { GraduationCap, Calendar, Building2, BookOpen } from "lucide-react";
+import ju from "../assets/ju.png";
+import ndc from "../assets/ndc.png";
+import frii from "../assets/frii.jpeg";
 
 const Education = ({ darkMode }) => {
   const education = [
@@ -6,7 +9,7 @@ const Education = ({ darkMode }) => {
       institution: "Jahangirnagar University",
       degree: "Bachelor of Science in Information Technology",
       duration: "February 2018 - March 2023",
-      logo: "https://juniv.edu/storage/image/settings/1700628070-ju-logo.png",
+      logo: ju,
       icon: GraduationCap,
       description: "CGPA: 3.45 out of 4.00",
     },
@@ -14,7 +17,7 @@ const Education = ({ darkMode }) => {
       institution: "Notre Dame College",
       degree: "HSC ~ Science",
       duration: "2015 - 2017",
-      logo: "https://notredame.edu.bd/public/images/logo.png",
+      logo: ndc,
       icon: Building2,
       description: "GPA: 5.00 out of 5.00",
     },
@@ -22,7 +25,7 @@ const Education = ({ darkMode }) => {
       institution: "Faizur Rahman Ideal Institute",
       degree: "SSC ~ Science",
       duration: "2007 - 2014",
-      logo: "https://frii.edu.bd/wp-content/uploads/2022/03/frii-logo.png",
+      logo: frii,
       icon: BookOpen,
       description: "GPA: 5.00 out of 5.00",
     },
@@ -58,7 +61,7 @@ const Education = ({ darkMode }) => {
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6">
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 border-4 border-white dark:border-gray-900">
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 border-4 border-white dark:border-gray-300">
                       <div className="absolute inset-0 w-full h-full rounded-full animate-ping bg-gradient-to-r from-purple-400 to-pink-500 opacity-75"></div>
                     </div>
                   </div>
@@ -70,60 +73,64 @@ const Education = ({ darkMode }) => {
                     }`}
                   >
                     <div
-                      className={`group rounded-xl p-6 transition-all duration-300 border shadow-lg hover:shadow-xl ${
+                      className={`relative group rounded-xl p-6 transition-all duration-300 border shadow-lg hover:shadow-xl ${
                         darkMode
                           ? "bg-gray-800/90 border-gray-700/50 hover:bg-gray-700/90"
                           : "bg-white/90 border-gray-200/50 hover:bg-white"
                       }`}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {/* Gradient overlay on hover */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                      {/* Institution Logo */}
-                      <div className="mb-4 flex justify-center">
-                        <div className="w-24 h-24 rounded-full overflow-hidden bg-white p-2 border-4 border-purple-400/20 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                          <img
-                            src={edu.logo}
-                            alt={edu.institution}
-                            className="w-full h-full object-contain"
-                          />
+                      {/* Content */}
+                      <div className="relative z-10">
+                        {/* Institution Logo */}
+                        <div className="mb-4 flex justify-center">
+                          <div className="w-24 h-24 rounded-full overflow-hidden bg-white p-2 border-4 border-purple-400/20 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                            <img
+                              src={edu.logo}
+                              alt={edu.institution}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="text-center space-y-3">
-                        <div className="flex items-center justify-center gap-2">
-                          <Icon className="text-purple-400" size={20} />
-                          <h3
-                            className={`text-xl font-semibold ${
-                              darkMode ? "text-gray-200" : "text-gray-800"
+                        <div className="text-center space-y-3">
+                          <div className="flex items-center justify-center gap-2">
+                            <Icon className="text-purple-400" size={20} />
+                            <h3
+                              className={`text-xl font-semibold ${
+                                darkMode ? "text-gray-200" : "text-gray-800"
+                              }`}
+                            >
+                              {edu.institution}
+                            </h3>
+                          </div>
+
+                          <p
+                            className={`text-lg font-medium ${
+                              darkMode ? "text-gray-300" : "text-gray-700"
                             }`}
                           >
-                            {edu.institution}
-                          </h3>
-                        </div>
+                            {edu.degree}
+                          </p>
 
-                        <p
-                          className={`text-lg font-medium ${
-                            darkMode ? "text-gray-300" : "text-gray-700"
-                          }`}
-                        >
-                          {edu.degree}
-                        </p>
+                          <p
+                            className={`text-sm font-semibold ${
+                              darkMode ? "text-purple-400" : "text-purple-600"
+                            }`}
+                          >
+                            {edu.description}
+                          </p>
 
-                        <p
-                          className={`text-sm font-semibold ${
-                            darkMode ? "text-purple-400" : "text-purple-600"
-                          }`}
-                        >
-                          {edu.description}
-                        </p>
-
-                        <div
-                          className={`flex items-center justify-center gap-2 text-sm ${
-                            darkMode ? "text-gray-400" : "text-gray-500"
-                          }`}
-                        >
-                          <Calendar size={16} />
-                          <span>{edu.duration}</span>
+                          <div
+                            className={`flex items-center justify-center gap-2 text-sm ${
+                              darkMode ? "text-gray-400" : "text-gray-500"
+                            }`}
+                          >
+                            <Calendar size={16} />
+                            <span>{edu.duration}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -148,14 +155,18 @@ const Education = ({ darkMode }) => {
                 </div>
 
                 <div
-                  className={`group rounded-xl p-6 transition-all duration-300 border shadow-lg hover:shadow-xl ${
+                  className={`relative group rounded-xl p-6 transition-all duration-300 border shadow-lg hover:shadow-xl ${
                     darkMode
                       ? "bg-gray-800/90 border-gray-700/50 hover:bg-gray-700/90"
                       : "bg-white/90 border-gray-200/50 hover:bg-white"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden bg-white p-2 border-2 border-purple-400/20 flex-shrink-0">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden bg-white p-2 border-2 border-purple-400/20 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={edu.logo}
                         alt={edu.institution}

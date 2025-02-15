@@ -40,10 +40,10 @@ const Portfolio = () => {
     { id: "home", label: "Home" },
     { id: "experience", label: "Experience" },
     { id: "achievements", label: "Achievements" },
-    { id: "work", label: "Work" },
+    { id: "work", label: "Projects" },
     { id: "education", label: "Education" },
     { id: "blog", label: "Blog" },
-    { id: "videos", label: "Videos" },
+    { id: "videos", label: "Content Creation" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -205,7 +205,7 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`min-h-screen pt-20 px-4 md:px-6 lg:px-8 relative overflow-hidden
+            className={`min-h-screen pt-24 px-4 md:px-6 lg:px-8 relative overflow-hidden
               ${darkMode ? "text-gray-100" : "text-gray-800"}`}
           >
             {/* Floating Icons Background */}

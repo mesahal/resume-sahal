@@ -31,7 +31,7 @@ const Blog = ({ darkMode }) => {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-          Technical Blog
+          Blog
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

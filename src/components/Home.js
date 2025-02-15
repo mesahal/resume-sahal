@@ -81,7 +81,7 @@ const Home = ({ darkMode }) => {
     },
     {
       icon: <GitHub size={20} />,
-      href: "https://github.com/Sahal2000",
+      href: "https://github.com/mesahal",
       label: "GitHub",
       color: "text-gray-400",
     },
@@ -93,13 +93,13 @@ const Home = ({ darkMode }) => {
     },
     {
       icon: <Facebook size={20} />,
-      href: "https://facebook.com/me.sahal2000",
+      href: "https://www.facebook.com/memdsahal",
       label: "Facebook",
       color: "text-blue-500",
     },
     {
       icon: <Instagram size={20} />,
-      href: "https://www.instagram.com/me__sahal/",
+      href: "https://www.instagram.com/me_md_sahal",
       label: "Instagram",
       color: "text-pink-500",
     },
@@ -111,7 +111,7 @@ const Home = ({ darkMode }) => {
     },
     {
       icon: <Youtube size={20} />,
-      href: "https://youtube.com/@me_sahal",
+      href: "https://www.youtube.com/@me__sahal",
       label: "YouTube",
       color: "text-red-500",
     },

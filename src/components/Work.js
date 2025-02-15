@@ -103,7 +103,7 @@ const Work = ({ darkMode }) => {
       description:
         "Built responsive web applications using modern JavaScript frameworks and libraries.",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
-      link: "https://github.com/Sahal2000",
+      link: "https://github.com/mesahal",
       tags: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
