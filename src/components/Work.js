@@ -19,6 +19,9 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import cityremit from "../assets/cityremit.png";
+import convay from "../assets/convay.webp";
+import healthcare from "../assets/healthcare.png";
 
 const Work = ({ darkMode }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,7 +31,7 @@ const Work = ({ darkMode }) => {
       title: "City Remit",
       description:
         "A financial application for transferring remittances from Malaysia, utilizing Java, Spring Boot, Oracle, and Vue. My technical responsibilities include developing RESTful APIs, implementing new features, and fixing backend bugs.",
-      image: "https://images.unsplash.com/photo-1616514197671-15d99ce7a6f8",
+      image: cityremit,
       technologies: ["Java", "Spring Boot", "Oracle", "Vue.js", "RESTful APIs"],
       features: [
         "Secure remittance transfers",
@@ -47,7 +50,7 @@ const Work = ({ darkMode }) => {
       title: "Convay",
       description:
         "A video conferencing platform providing meeting solutions for both individual and enterprise users. Built with Java, Spring Boot, React, and MySQL. My role involved developing RESTful APIs, implementing new features, and fixing frontend bugs.",
-      image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e",
+      image: convay,
       technologies: ["Java", "Spring Boot", "React", "MySQL", "WebRTC"],
       features: [
         "Real-time video conferencing",
@@ -66,7 +69,7 @@ const Work = ({ darkMode }) => {
       title: "Health Care",
       description:
         "A doctor appointment platform enabling patients to book appointments and provide ratings, with BMDC validation for doctor registration. Built using Java, Spring Boot, React, and PostgreSQL.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+      image: healthcare,
       technologies: [
         "Java",
         "Spring Boot",
@@ -226,8 +229,8 @@ const Work = ({ darkMode }) => {
 
                     <div className="mt-6 pt-6 border-t border-gray-700/50">
                       <p
-                        className={`flex items-center gap-2 ${
-                          darkMode ? "text-gray-300" : "text-gray-700"
+                        className={`flex items-center gap-2 font-bold ${
+                          darkMode ? "text-orange-400" : "text-gray-700"
                         }`}
                       >
                         <span className="font-semibold text-purple-400">
@@ -266,7 +269,7 @@ const Work = ({ darkMode }) => {
         </div>
 
         {/* Other Projects */}
-        <div>
+        {/* <div>
           <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
             Other Notable Projects
           </h2>
@@ -337,7 +340,7 @@ const Work = ({ darkMode }) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

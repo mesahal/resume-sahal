@@ -6,6 +6,11 @@ import atcoder from "../assets/atcoder.png";
 import codechef from "../assets/codechef.jpeg";
 import lightoj from "../assets/lightoj.jpeg";
 import uva from "../assets/uva.png";
+import aust from "../assets/austiupc.jpeg";
+import ruet from "../assets/ruetiupc.jpeg";
+import mbstu from "../assets/mbstuiupc.jpeg";
+import cf from "../assets/cf.jpg";
+import cc from "../assets/cc.jpg";
 
 const Achievements = ({ darkMode }) => {
   const countersRef = useRef(new Map());
@@ -61,7 +66,7 @@ const Achievements = ({ darkMode }) => {
       rating: "Max Rating 1694",
       ratingClass: "text-cyan-400",
       link: "https://codeforces.com/profile/sahal",
-      logo: "https://cdn.iconscout.com/icon/free/png-256/free-codeforces-3628695-3029920.png",
+      logo: codeforces,
     },
     {
       name: "LeetCode",
@@ -69,7 +74,7 @@ const Achievements = ({ darkMode }) => {
       rating: "Max Rating 1747",
       ratingClass: "text-yellow-400",
       link: "https://leetcode.com/sahal2000/",
-      logo: "https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png",
+      logo: leetcode,
     },
     {
       name: "AtCoder",
@@ -77,7 +82,7 @@ const Achievements = ({ darkMode }) => {
       rating: "Max Rating 678",
       ratingClass: "text-green-400",
       link: "https://atcoder.jp/users/sahal2000",
-      logo: "https://img.atcoder.jp/assets/atcoder.png",
+      logo: atcoder,
     },
     {
       name: "CodeChef",
@@ -85,19 +90,19 @@ const Achievements = ({ darkMode }) => {
       rating: "Max Rating 1759",
       ratingClass: "text-orange-400",
       link: "https://www.codechef.com/users/sahal2000",
-      logo: "https://cdn.codechef.com/images/cc-logo.svg",
+      logo: codechef,
     },
     {
       name: "LightOJ",
       count: 100,
       link: "https://lightoj.com/user/sahal",
-      logo: "https://lightoj.com/logo.png",
+      logo: lightoj,
     },
     {
       name: "UVa Online Judge",
       count: 150,
       link: "https://uhunt.onlinejudge.org/id/955955",
-      logo: "https://uhunt.onlinejudge.org/images/uva.png",
+      logo: uva,
     },
   ];
 
@@ -105,33 +110,33 @@ const Achievements = ({ darkMode }) => {
     {
       contest: "Codechef Starter 67 Div.2",
       position: "217",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      image: cc,
     },
     {
       contest: "Codeforces Round 760 Div. 3",
       position: "254",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      image: cf,
     },
   ];
 
   const onsiteContests = [
     {
-      contest: "IDPC 2020A",
+      contest: "MBSTU IDPC 2020A",
       university: "MBSTU",
       position: "11",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
+      image: mbstu,
     },
     {
       contest: "RUET IUPC 2022",
       university: "RUET",
       position: "35",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+      image: ruet,
     },
     {
       contest: "AUST IUPC 2022",
       university: "AUST",
       position: "42",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
+      image: aust,
     },
   ];
 
@@ -182,7 +187,7 @@ const Achievements = ({ darkMode }) => {
                   <img
                     src={platform.logo}
                     alt={`${platform.name} logo`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain rounded-xl"
                   />
                 </div>
                 <h3
@@ -258,7 +263,7 @@ const Achievements = ({ darkMode }) => {
                       <h3 className="text-xl font-bold text-white mb-2">
                         {contest.contest}
                       </h3>
-                      <p className="text-purple-300 font-semibold flex items-center gap-2">
+                      <p className="text-orange-400 font-semibold flex items-center gap-2">
                         <Medal size={16} />
                         Ranked {contest.position}th
                       </p>
@@ -295,11 +300,11 @@ const Achievements = ({ darkMode }) => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-4 left-4 right-4 z-20">
-                      <h3 className="text-xl font-bold text-white mb-1">
+                      <h3 className="text-xl font-bold text-orange-400 mb-1">
                         {contest.contest}
                       </h3>
                       <p className="text-gray-300 mb-2">{contest.university}</p>
-                      <p className="text-purple-300 font-semibold flex items-center gap-2">
+                      <p className="text-yellow-400 font-semibold flex items-center gap-2">
                         <Medal size={16} />
                         Ranked {contest.position}th
                       </p>

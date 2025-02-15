@@ -11,7 +11,7 @@ import Videos from "./Videos";
 import Contact from "./Contact";
 import FloatingIcons from "./FloatingIcons";
 import { Sun, Moon, Menu, X, ChevronUp } from "lucide-react";
-
+import bgImage from "../assets/bg.jpeg";
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -42,8 +42,8 @@ const Portfolio = () => {
     { id: "achievements", label: "Achievements" },
     { id: "work", label: "Projects" },
     { id: "education", label: "Education" },
-    { id: "blog", label: "Blog" },
     { id: "videos", label: "Content Creation" },
+    { id: "blog", label: "Blog" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -63,9 +63,10 @@ const Portfolio = () => {
 
   return (
     <div
-      className={`min-h-screen bg-[url('https://images.unsplash.com/photo-1522252234503-e356532cafd5')] bg-cover bg-fixed bg-center before:content-[''] before:absolute before:inset-0 ${
+      className={`min-h-screen  bg-cover bg-fixed bg-center before:content-[''] before:absolute before:inset-0 ${
         darkMode ? "before:bg-gray-900/85" : "before:bg-gray-50/90"
       }`}
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Navigation Bar */}
       <motion.nav
