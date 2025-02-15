@@ -6,14 +6,16 @@ import {
   Binary,
   Cpu,
 } from "lucide-react";
-
+import bs23Logo from "../assets/brain_station_23_logo.jpeg";
+import synesisLogo from "../assets/synesis_it_limited_logo.jpeg";
+import bdosnLogo from "../assets/bdosn_logo.jpeg";
 const Experience = ({ darkMode }) => {
   const experiences = [
     {
       company: "Brain Station 23 PLC.",
       role: "Software Engineer",
       duration: "April 2024 - Present",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQEhBWM1jX08fw/company-logo_200_200/company-logo_200_200/0/1630578624123/brain_station_23_logo?e=2147483647&v=beta&t=Mnfby5HpZM7vOn2xGUaXPOAay0N6yiYLxjMww8s1Ktg",
+      logo: bs23Logo,
       description:
         "Working on enterprise-level software solutions using cutting-edge technologies.",
       skills: ["Spring Boot", "Java", "Microservice", "Fintech"],
@@ -22,7 +24,7 @@ const Experience = ({ darkMode }) => {
       company: "Synesis IT Ltd.",
       role: "Trainee Programmer",
       duration: "August 2023 - March 2024",
-      logo: "https://media.licdn.com/dms/image/v2/C560BAQGR9K7OrOwDBw/company-logo_200_200/company-logo_200_200/0/1636786495526/synesis_it_limited_logo?e=2147483647&v=beta&t=3-_mgdI3docP3CTwdGaHTEXYBk_fOvGe1fPcDh6LFpk",
+      logo: synesisLogo,
       description:
         "Developed and maintained web applications, focusing on front-end development and API integration.",
       skills: ["Spring Boot", "Java", "JavaScript", "React"],
@@ -31,7 +33,7 @@ const Experience = ({ darkMode }) => {
       company: "BdOSN",
       role: "Programming Instructor",
       duration: "2020 - 2021",
-      logo: "https://media.licdn.com/dms/image/v2/C510BAQGLIFa-dUEVHw/company-logo_200_200/company-logo_200_200/0/1630574736202/bdosn_logo?e=2147483647&v=beta&t=Ttgm4ylCNHa_ZcgD2aonCIqBN-KiT0FG9FlFnHxFDbw",
+      logo: bdosnLogo,
       description:
         "Developed and maintained web applications, focusing on front-end development and API integration.",
       skills: ["Algorithm", "Data Structure", "C", "C++"],
@@ -69,7 +71,8 @@ const Experience = ({ darkMode }) => {
           Professional Journey
         </h1>
 
-        <div className="relative">
+        {/* Desktop Timeline */}
+        <div className="hidden md:block relative">
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 rounded-full"></div>
 
@@ -91,7 +94,7 @@ const Experience = ({ darkMode }) => {
                   <div
                     className={`group relative rounded-xl p-6 transition-all duration-300 border hover:transform hover:scale-[1.02] ${
                       darkMode
-                        ? "bg-gray-900/50 border-gray-700/50 hover:bg-gray-700/50"
+                        ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
                         : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
                     }`}
                   >
@@ -160,6 +163,93 @@ const Experience = ({ darkMode }) => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Mobile Timeline */}
+        <div className="md:hidden">
+          <div className="relative pl-8">
+            {/* Timeline Line */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-pink-500 to-red-500"></div>
+
+            {/* Experience Cards */}
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <div key={index} className="relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-purple-400 to-pink-500">
+                    <div className="absolute inset-0 w-full h-full rounded-full animate-ping bg-gradient-to-r from-purple-400 to-pink-500 opacity-75"></div>
+                  </div>
+
+                  {/* Card */}
+                  <div
+                    className={`group rounded-xl p-4 transition-all duration-300 border shadow-lg hover:shadow-xl ml-4 ${
+                      darkMode
+                        ? "bg-gray-800/50 border-gray-700/50 hover:bg-gray-700/50"
+                        : "bg-white/80 border-gray-200/50 hover:bg-gray-50/80"
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-12 h-12 rounded-lg overflow-hidden bg-white p-1 flex-shrink-0">
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3
+                          className={`text-lg font-semibold truncate ${
+                            darkMode ? "text-gray-200" : "text-gray-800"
+                          }`}
+                        >
+                          {exp.company}
+                        </h3>
+                        <p
+                          className={`text-base ${
+                            darkMode ? "text-purple-400" : "text-purple-600"
+                          }`}
+                        >
+                          {exp.role}
+                        </p>
+                      </div>
+                    </div>
+
+                    <p
+                      className={`mt-3 text-sm ${
+                        darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      {exp.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      {exp.skills.map((skill, i) => (
+                        <span
+                          key={i}
+                          className={`px-2 py-0.5 text-xs rounded-full border ${
+                            darkMode
+                              ? "bg-gray-700/50 border-gray-600 text-gray-300"
+                              : "bg-gray-100/80 border-gray-200 text-gray-700"
+                          }`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div
+                      className={`flex items-center gap-1.5 mt-3 text-xs ${
+                        darkMode ? "text-gray-500" : "text-gray-500"
+                      }`}
+                    >
+                      <Calendar size={14} />
+                      {exp.duration}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
