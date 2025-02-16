@@ -22,8 +22,11 @@ const Home = ({ darkMode }) => {
 
   const roles = [
     { text: "Software Engineer", color: "text-purple-400" },
+    { text: "Content Creator", color: "text-blue-400" }, // New color
     { text: "Problem Solver", color: "text-pink-400" },
+    { text: "Fullstack Developer", color: "text-green-400" }, // New color
     { text: "Competitive Programmer", color: "text-red-400" },
+    { text: "Programming Trainer", color: "text-yellow-400" }, // New color
   ];
 
   const [currentText, setCurrentText] = useState("");

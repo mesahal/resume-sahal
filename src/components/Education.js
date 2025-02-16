@@ -11,7 +11,7 @@ const Education = ({ darkMode }) => {
       duration: "February 2018 - March 2023",
       logo: ju,
       icon: GraduationCap,
-      description: "CGPA: 3.45 out of 4.00",
+      description: "CGPA: 3.51 out of 4.00",
     },
     {
       institution: "Notre Dame College",
@@ -115,13 +115,13 @@ const Education = ({ darkMode }) => {
                             {edu.degree}
                           </p>
 
-                          <p
+                          {/* <p
                             className={`text-sm font-semibold ${
                               darkMode ? "text-purple-400" : "text-purple-600"
                             }`}
                           >
                             {edu.description}
-                          </p>
+                          </p> */}
 
                           <div
                             className={`flex items-center justify-center gap-2 text-sm ${
@@ -194,13 +194,13 @@ const Education = ({ darkMode }) => {
                         {edu.degree}
                       </p>
 
-                      <p
+                      {/* <p
                         className={`text-sm font-medium ${
                           darkMode ? "text-purple-400" : "text-purple-600"
                         }`}
                       >
                         {edu.description}
-                      </p>
+                      </p> */}
 
                       <div
                         className={`flex items-center gap-2 text-sm ${
