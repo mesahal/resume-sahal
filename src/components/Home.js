@@ -13,6 +13,9 @@ import {
   Cpu,
 } from "lucide-react";
 import { useTypingEffect } from "../components/hooks/useTypingEffect";
+import XLogoB from "../assets/twitterx--v2.png";
+import XLogo from "../assets/xlogo.svg";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Home = ({ darkMode }) => {
   const greeting = useTypingEffect("As-salamu alaykum", 100);
@@ -107,7 +110,13 @@ const Home = ({ darkMode }) => {
       color: "text-pink-500",
     },
     {
-      icon: <Twitter size={20} />,
+      icon: (
+        <img
+          src={darkMode ? XLogoB : XLogo}
+          alt="X"
+          className={`${darkMode ? "w-5 h-5" : "w-5 h-5"} object-contain`}
+        />
+      ),
       href: "https://twitter.com/me__sahal",
       label: "Twitter",
       color: "text-sky-400",
@@ -117,6 +126,12 @@ const Home = ({ darkMode }) => {
       href: "https://www.youtube.com/@me__sahal",
       label: "YouTube",
       color: "text-red-500",
+    },
+    {
+      icon: <FaWhatsapp size={20} />,
+      href: "https://whatsapp.com/channel/0029VapIAQjKgsO1w66ao52d",
+      label: "WhatsApp",
+      color: "text-green-500",
     },
   ];
 

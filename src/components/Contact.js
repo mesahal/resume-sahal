@@ -11,6 +11,9 @@ import {
   Loader2,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import XLogoB from "../assets/twitterx--v2.png";
+import XLogo from "../assets/xlogo.svg";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = ({ darkMode }) => {
   const [formData, setFormData] = useState({
@@ -99,7 +102,13 @@ const Contact = ({ darkMode }) => {
     },
     {
       name: "Twitter",
-      icon: <Twitter size={24} />,
+      icon: (
+        <img
+          src={darkMode ? XLogoB : XLogo}
+          alt="X"
+          className={`${darkMode ? "w-6 h-6" : "w-5 h-5"} object-contain`}
+        />
+      ),
       link: "https://twitter.com/me__sahal",
       color: "hover:text-sky-400",
     },
@@ -108,6 +117,12 @@ const Contact = ({ darkMode }) => {
       icon: <Youtube size={24} />,
       link: "https://www.youtube.com/@me__sahal",
       color: "hover:text-red-500",
+    },
+    {
+      icon: <FaWhatsapp size={24} />,
+      href: "https://whatsapp.com/channel/0029VapIAQjKgsO1w66ao52d",
+      label: "WhatsApp",
+      color: "hover:text-green-500",
     },
   ];
 

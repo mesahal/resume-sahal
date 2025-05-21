@@ -12,6 +12,8 @@ import Contact from "./Contact";
 import FloatingIcons from "./FloatingIcons";
 import { Sun, Moon, Menu, X, ChevronUp } from "lucide-react";
 import bgImage from "../assets/bg.jpeg";
+import myLogo from "../assets/myLogo.jpeg";
+
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -87,16 +89,21 @@ const Portfolio = () => {
               spy={true}
               smooth={true}
               duration={500}
-              className="text-2xl font-bold cursor-pointer relative group"
+              className="group relative inline-flex flex-row items-center space-x-2 text-2xl font-bold cursor-pointer"
             >
+              <img
+                src={myLogo}
+                alt="Logo"
+                className="ml-2 w-8 h-8 rounded-full"
+              />
               <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-                Sahal
+                Md Sahal
               </span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               {sections.map(({ id, label }) => (
                 <Link
                   key={id}
@@ -136,7 +143,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50
+              className={`lg:hidden p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50
                 ${
                   darkMode
                     ? "hover:bg-gray-800 text-gray-300"
@@ -156,7 +163,7 @@ const Portfolio = () => {
                 animate="visible"
                 exit="hidden"
                 variants={mobileMenuVariants}
-                className="md:hidden py-4 space-y-2"
+                className="lg:hidden py-4 space-y-2"
               >
                 {sections.map(({ id, label }) => (
                   <Link
